@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Future | محل كمبيوتر</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05060f;--bg2:#0b0d22;--card:rgba(20,24,56,.55);--tx:#e8ecff;--mut:#98a2d6;--c1:#19e6ff;--c2:#8a5bff;--c3:#ff4fd8;--bd:rgba(25,230,255,.28);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=light]{--bg:#eef2ff;--bg2:#fff;--card:rgba(255,255,255,.8);--tx:#12163a;--mut:#4a5190;--c1:#0083c9;--c2:#6a3cf0;--c3:#d11fa8;--bd:rgba(106,60,240,.3)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden;max-width:100%;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,sans-serif;overflow-x:hidden;line-height:1.7}
+h1,h2,h3{margin:0;line-height:1.2}
+.en{font-family:Orbitron,sans-serif;letter-spacing:.06em}
+#stars{position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+section,header,footer{position:relative;z-index:1}
+section{padding:80px 5%;max-width:1200px;margin:auto}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:28px;text-shadow:0 0 18px var(--c2)}
+body::before{content:"";position:fixed;left:0;right:0;bottom:0;height:45vh;z-index:0;pointer-events:none;background:linear-gradient(var(--c2) 1px,transparent 1px) 0 0/100% 48px,linear-gradient(90deg,var(--c2) 1px,transparent 1px) 0 0/60px 100%;opacity:.3;transform:perspective(500px) rotateX(62deg) scaleX(1.8);transform-origin:bottom;animation:gm 3s linear infinite;-webkit-mask-image:linear-gradient(transparent,#000);mask-image:linear-gradient(transparent,#000)}
+@keyframes gm{to{background-position:0 48px,0 0}}
+#glow{position:fixed;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,rgba(138,91,255,.3),transparent 65%);pointer-events:none;z-index:0;left:50%;top:40%}
+.hero h1 b{background-size:300% 100%;animation:sh 6s linear infinite;display:inline-block}
+@keyframes sh{to{background-position:300% 0}}
+.scene{position:relative}
+.ring{position:absolute;width:300px;height:300px;border:1px dashed var(--c1);border-radius:50%;animation:rg 18s linear infinite;box-shadow:0 0 30px rgba(25,230,255,.25)}
+.ring.r2{width:400px;height:400px;border-color:var(--c3);animation-direction:reverse;animation-duration:26s}
+@keyframes rg{to{transform:rotate(360deg)}}
+.cube{filter:drop-shadow(0 0 22px var(--c2))}
+.mq{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--bd);background:var(--card);direction:ltr;padding:10px 0;font:700 1rem Orbitron;color:var(--c1)}
+.mq div{display:inline-block;white-space:nowrap;animation:mq 30s linear infinite;text-shadow:0 0 10px var(--c1)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.tilt:hover{border-color:var(--c3);box-shadow:0 0 30px rgba(255,79,216,.45)}
+/* boot */
+#boot{position:fixed;inset:0;background:#02030a;z-index:99;display:grid;place-content:center;font-family:Orbitron,monospace;color:#19e6ff;direction:ltr;transition:opacity .6s}
+#boot pre{margin:0;font-size:.8rem;min-height:7em}
+/* header */
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;padding:12px 5%;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--bd)}
+.logo{font-family:Orbitron;font-weight:900;font-size:1.5rem;color:var(--c1);text-shadow:0 0 14px var(--c1);text-decoration:none;animation:glitch 6s infinite}
+@keyframes glitch{0%,94%,100%{transform:none;text-shadow:0 0 14px var(--c1)}95%{transform:translateX(3px);text-shadow:-3px 0 var(--c3),3px 0 var(--c1)}97%{transform:translateX(-3px)}}
+nav{display:flex;gap:18px;margin-inline-start:auto}
+nav a{color:var(--tx);text-decoration:none;font-weight:700}
+nav a:hover{color:var(--c1)}
+.ib{background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:10px;padding:6px 12px;cursor:pointer;font:inherit}
+.ib:hover{box-shadow:0 0 14px var(--c1)}
+@media(max-width:760px){nav{display:none}header .ib:first-of-type{margin-inline-start:auto}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;min-height:82vh}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900}
+.hero h1 b{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:1.15rem;max-width:34em}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--c2),var(--c1));color:#fff;border:0;border-radius:12px;padding:12px 26px;font:700 1rem Cairo;cursor:pointer;text-decoration:none;box-shadow:0 0 22px rgba(25,230,255,.45)}
+.btn:hover{filter:brightness(1.15)}
+.scene{perspective:900px;display:grid;place-items:center;height:320px}
+.cube{width:150px;height:150px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.cube i{position:absolute;inset:0;border:2px solid var(--c1);background:rgba(25,230,255,.07);box-shadow:0 0 24px var(--c1) inset,0 0 18px var(--c2);display:grid;place-items:center;font:900 1.1rem Orbitron;color:var(--c1);font-style:normal}
+.cube i:nth-child(1){transform:translateZ(75px)}.cube i:nth-child(2){transform:rotateY(180deg) translateZ(75px)}
+.cube i:nth-child(3){transform:rotateY(90deg) translateZ(75px)}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(75px)}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(75px)}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(75px)}
+@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.scene{height:240px}}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;backdrop-filter:blur(8px);transition:transform .15s,box-shadow .2s;transform-style:preserve-3d}
+.card:hover{box-shadow:0 0 26px rgba(138,91,255,.5)}
+.card .ic{font-size:2.4rem}
+.card h3{font-size:1.1rem;margin:8px 0}
+.card p{color:var(--mut);margin:0;font-size:.95rem}
+.price{font-family:Orbitron;color:var(--c1);font-weight:700;margin:10px 0}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.tools input{flex:1;min-width:180px;background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:10px;padding:10px 14px;font:inherit}
+.chip{background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:99px;padding:6px 16px;cursor:pointer;font:inherit}
+.chip.on{background:var(--c2);color:#fff;box-shadow:0 0 14px var(--c2)}
+.num{font:900 2.2rem Orbitron;color:var(--c3)}
+/* slider */
+.slider{overflow:hidden;border-radius:16px}
+.track{display:flex;transition:transform .5s}
+.slide{min-width:100%;padding:28px;text-align:center}
+.slide q{font-size:1.2rem;display:block;margin-bottom:10px}
+/* contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+form{display:grid;gap:10px}
+form input,form textarea{background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:10px;padding:10px 14px;font:inherit}
+iframe{width:100%;height:220px;border:0;border-radius:12px;margin-top:12px;background:var(--bg2)}
+footer{text-align:center;padding:30px 5% 90px;color:var(--mut);border-top:1px solid var(--bd)}
+footer a{color:var(--c1);margin:0 8px;text-decoration:none}
+/* cart */
+#cart{position:fixed;top:0;bottom:0;inset-inline-start:0;width:min(380px,100%);background:var(--bg2);border-inline-end:1px solid var(--bd);z-index:50;padding:20px;transform:translateX(-105%);transition:transform .3s;overflow:auto;padding-top:calc(20px + env(safe-area-inset-top,0px))}
+[dir=rtl] #cart{inset-inline-start:auto;inset-inline-end:auto;left:0;right:auto}
+#cart.open{transform:none}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bd)}
+.fab{position:fixed;z-index:30;width:50px;height:50px;border-radius:50%;border:0;display:grid;place-items:center;font-size:1.4rem;cursor:pointer;text-decoration:none;bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+#wa{left:18px;background:#25d366;color:#fff;box-shadow:0 0 18px #25d366}
+#up{right:18px;background:var(--c2);color:#fff;box-shadow:0 0 18px var(--c2);display:none}
+:focus-visible{outline:2px solid var(--c3);outline-offset:2px}
+@media(max-width:760px){body{font-size:15px}section{padding:44px 5%}h2{font-size:1.5rem;margin-bottom:18px}.hero{min-height:auto;padding-top:24px;gap:6px}.hero h1{font-size:2rem}.hero p{font-size:1rem}.scene{height:230px;overflow:hidden}.ring{width:200px;height:200px}.ring.r2{width:260px;height:260px}.cube{scale:.7}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.card{padding:12px;border-radius:14px}.card .ic{font-size:1.8rem}.card h3{font-size:.95rem}.card p{font-size:.85rem}.btn{padding:9px 16px;font-size:.9rem}.price{font-size:.85rem}#glow{display:none}.mq{font-size:.8rem}.logo{font-size:1.2rem}header{padding:8px 4%;gap:8px}.num{font-size:1.6rem}.slide q{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="boot"><pre id="bt"></pre></div>
+<canvas id="stars"></canvas><div id="glow"></div>
+
+<header>
+  <a class="logo" href="#home">FUTURE</a>
+  <nav><a href="#home">الرئيسية</a><a href="#products">المنتجات</a><a href="#services">الخدمات</a><a href="#about">من نحن</a><a href="#contact">تواصل معنا</a></nav>
+  <button class="ib" id="theme" aria-label="تبديل الوضع">🌓</button>
+  <button class="ib" id="cartBtn">🛒 <span id="cnt">0</span></button>
+</header>
+
+<aside id="cart" aria-label="سلة المشتريات">
+  <div class="row"><h3>سلة المشتريات</h3><button class="ib" id="close">✕</button></div>
+  <div id="items"></div>
+  <p class="price" id="total"></p>
+  <button class="btn" id="order" style="width:100%">اطلب عبر واتساب</button>
+</aside>
+
+<section class="hero" id="home">
+  <div>
+    <h1>كمبيوتر اليوم.<br><b id="tw">بقوة المستقبل.</b></h1>
+    <p>في Future بتلاقي لابتوبات، كروت شاشة، وقطع تجميع بأحدث التقنيات، مع فنيين بيصلحوا ويرقّوا جهازك في نفس اليوم.</p>
+    <a class="btn" href="#products">تسوق الآن</a>
+  </div>
+  <div class="scene"><div class="ring"></div><div class="ring r2"></div><div class="cube"><i>CPU</i><i>GPU</i><i>RAM</i><i>SSD</i><i>LAN</i><i>AI</i></div></div>
+</section>
+
+<div class="mq"><div id="mqi"></div></div>
+<section id="cats"><h2>التصنيفات</h2><div class="grid" id="catGrid"></div></section>
+
+<section id="products">
+  <h2>المنتجات</h2>
+  <div class="tools"><input id="q" placeholder="ابحث عن منتج..." aria-label="بحث"><span id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+  <div class="grid" id="pg"></div>
+</section>
+
+<section id="services"><h2>الخدمات</h2>
+  <div class="grid">
+    <div class="card"><div class="ic">🛠️</div><h3>صيانة شاملة</h3><p>تشخيص وإصلاح الأعطال، وتنظيف وتغيير معجون الحرارة.</p></div>
+    <div class="card"><div class="ic">💿</div><h3>تثبيت ويندوز</h3><p>ويندوز أصلي مع كل التعريفات والبرامج الأساسية.</p></div>
+    <div class="card"><div class="ic">🧩</div><h3>تجميع حسب الطلب</h3><p>نختار لك القطع المناسبة لميزانيتك ونجمّعها ونختبرها.</p></div>
+    <div class="card"><div class="ic">⚡</div><h3>ترقية القطع</h3><p>رامات وSSD وكروت شاشة تخلي جهازك أسرع.</p></div>
+    <div class="card"><div class="ic">🗄️</div><h3>استرجاع بيانات</h3><p>نسترجع ملفاتك من الهارد التالف أو المفرمت.</p></div>
+  </div>
+</section>
+
+<section id="about"><h2>لماذا Future؟</h2>
+  <div class="grid">
+    <div class="card"><div class="num" data-n="24">0</div><h3>شهر ضمان</h3><p>على كل الأجهزة الجديدة.</p></div>
+    <div class="card"><div class="num" data-n="5000">0</div><h3>عميل سعيد</h3><p>وفنيين بخبرة حقيقية.</p></div>
+    <div class="card"><div class="num" data-n="48">0</div><h3>ساعة أقصى مدة صيانة</h3><p>ودعم بعد البيع بدون رسوم.</p></div>
+  </div>
+</section>
+
+<section><h2>آراء العملاء</h2>
+  <div class="slider card"><div class="track" id="track">
+    <div class="slide"><q>جمّعوا لي جهاز جيمنج بنص السعر اللي توقعته، وبيشتغل زي الفل.</q><b>أحمد س.</b></div>
+    <div class="slide"><q>رجّعوا لي صور الهارد اللي كنت فاكرها ضاعت. شكرًا جدًا.</q><b>منى ع.</b></div>
+    <div class="slide"><q>سريعين وأمينين، واللابتوب رجع أسرع من أول.</q><b>كريم ح.</b></div>
+  </div></div>
+</section>
+
+<section id="contact"><h2>تواصل معنا</h2>
+  <div class="two">
+    <form id="cf"><input name="n" placeholder="الاسم" required><input name="p" placeholder="رقم الموبايل" required><textarea name="m" rows="4" placeholder="رسالتك" required></textarea><button class="btn">إرسال عبر واتساب</button></form>
+    <div class="card"><p id="adr"></p><p id="ph"></p><p id="hrs"></p>
+    <iframe loading="lazy" title="الخريطة" src="https://www.openstreetmap.org/export/embed.html?bbox=29.70,30.95,29.85,31.05&layer=mapnik"></iframe></div>
+  </div>
+</section>
+
+<footer><b class="en">FUTURE</b> © 2026<br><a href="#home">الرئيسية</a><a href="#products">المنتجات</a><a href="#contact">تواصل</a><br>
+<a href="#" aria-label="فيسبوك">Facebook</a><a href="#" aria-label="إنستجرام">Instagram</a><a href="#" aria-label="تيك توك">TikTok</a></footer>
+
+<a class="fab" id="wa" href="#" aria-label="واتساب">💬</a>
+<button class="fab" id="up" aria-label="للأعلى">↑</button>
+
+<script>
+// ===== إعدادات: غيّر رقم الواتساب (بصيغة دولية بدون +) =====
+const PHONE="01016033746";            // رقم التليفون
+const WA="201016033746";              // رقم الواتساب بصيغة دولية
+const ADDRESS="الإسكندرية، العامرية، شارع القسم"; // العنوان
+const HOURS="يوميًا من 10 ص إلى 10 م، الجمعة من 2 م"; // مواعيد العمل
+// ===== بيانات المنتجات: عدّل عليها براحتك =====
+const CATS=[["لابتوبات","💻"],["كمبيوترات مكتبية","🖥️"],["كروت شاشة","🎮"],["هاردات وSSD","💾"],["رامات","🧠"],["إكسسوارات","🖱️"]];
+const PRODUCTS=[
+{id:1,n:"لابتوب Nova X15 – i7 / 16GB",c:0,p:28500,e:"💻"},{id:2,n:"لابتوب Aero Slim – Ryzen 5",c:0,p:19900,e:"💻"},
+{id:3,n:"كمبيوتر Titan Gaming",c:1,p:34000,e:"🖥️"},{id:4,n:"كمبيوتر Office Core i5",c:1,p:13500,e:"🖥️"},
+{id:5,n:"كارت شاشة RTX 4060 8GB",c:2,p:16800,e:"🎮"},{id:6,n:"كارت شاشة RX 7600",c:2,p:12900,e:"🎮"},
+{id:7,n:"SSD NVMe 1TB",c:3,p:2900,e:"💾"},{id:8,n:"هارد خارجي 2TB",c:3,p:2400,e:"💾"},
+{id:9,n:"رام DDR5 16GB",c:4,p:1900,e:"🧠"},{id:10,n:"رام DDR4 8GB",c:4,p:750,e:"🧠"},
+{id:11,n:"ماوس جيمنج RGB",c:5,p:450,e:"🖱️"},{id:12,n:"كيبورد ميكانيكال",c:5,p:1100,e:"⌨️"}];
+const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString("ar-EG")+" ج.م";
+// شاشة الإقلاع
+const bt=$("#bt"),lines=["> FUTURE OS v1.0","> تحميل الوحدات ...","> فحص الذاكرة ... OK","> جاهز."];let li=0;
+(function t(){bt.textContent=lines.slice(0,++li).join("\n");li<=lines.length?setTimeout(t,380):setTimeout(()=>{$("#boot").style.opacity=0;setTimeout(()=>$("#boot").remove(),600)},300)})();
+// خلفية النجوم التفاعلية
+const cv=$("#stars"),cx=cv.getContext("2d");let W,H,S=[],mx=0,my=0;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;S=Array.from({length:Math.min(110,W/9)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.3,v:Math.random()*.3+.05}))}
+rs();let lw=innerWidth;addEventListener("resize",()=>{if(innerWidth!=lw){lw=innerWidth;rs()}});addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY});
+(function d(){cx.clearRect(0,0,W,H);const dark=document.documentElement.dataset.theme=="dark";
+S.forEach(s=>{s.y+=s.v;if(s.y>H)s.y=0;const dx=s.x-mx,dy=s.y-my,dd=Math.hypot(dx,dy);if(dd<110){s.x+=dx/dd*1.5;s.y+=dy/dd*1.5}
+cx.fillStyle=dd<110?"#ff4fd8":dark?"#9fb4ff":"#6a3cf0";cx.beginPath();cx.arc(s.x,s.y,s.r,0,7);cx.fill()});requestAnimationFrame(d)})();
+// التصنيفات والمنتجات
+let cat=-1,cart=JSON.parse(localStorage.getItem("fcart")||"[]");
+$("#catGrid").innerHTML=CATS.map((c,i)=>`<div class="card" style="cursor:pointer" data-c="${i}"><div class="ic">${c[1]}</div><h3>${c[0]}</h3></div>`).join("");
+$("#chips").innerHTML=`<button class="chip on" data-c="-1">الكل</button>`+CATS.map((c,i)=>`<button class="chip" data-c="${i}">${c[0]}</button>`).join("");
+function show(){const k=$("#q").value.trim();
+$("#pg").innerHTML=PRODUCTS.filter(p=>(cat<0||p.c==cat)&&p.n.includes(k)).map(p=>`<div class="card tilt"><div class="ic">${p.e}</div><h3>${p.n}</h3><div class="price">${fmt(p.p)}</div><button class="btn" data-a="${p.id}">أضف للسلة</button></div>`).join("")||"<p>مفيش نتائج.</p>"}
+function setCat(i){cat=i;document.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b.dataset.c==i));show()}
+$("#chips").onclick=e=>e.target.dataset.c&&setCat(+e.target.dataset.c);
+$("#catGrid").onclick=e=>{const c=e.target.closest("[data-c]");if(c){setCat(+c.dataset.c);$("#products").scrollIntoView()}};
+$("#q").oninput=show;show();
+// تأثير الميلان
+document.addEventListener("pointermove",e=>{const c=e.target.closest(".tilt");document.querySelectorAll(".tilt").forEach(x=>x.style.transform="");
+if(c){const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(600px) rotateY(${x*14}deg) rotateX(${-y*14}deg)`}});
+// السلة
+function save(){try{localStorage.setItem("fcart",JSON.stringify(cart))}catch(e){}draw()}
+function draw(){$("#cnt").textContent=cart.reduce((a,b)=>a+b.q,0);
+$("#items").innerHTML=cart.map(i=>{const p=PRODUCTS.find(x=>x.id==i.id);return `<div class="row"><span>${p.n}<br><small>${fmt(p.p)}</small></span><span><button class="ib" data-m="${i.id}">−</button> ${i.q} <button class="ib" data-pl="${i.id}">+</button> <button class="ib" data-x="${i.id}">🗑</button></span></div>`}).join("")||"<p>السلة فاضية. ضيف منتج من المنتجات.</p>";
+$("#total").textContent="الإجمالي: "+fmt(cart.reduce((a,i)=>a+i.q*PRODUCTS.find(x=>x.id==i.id).p,0))}
+document.addEventListener("click",e=>{const t=e.target,g=k=>t.dataset[k];
+if(g("a")){const i=cart.find(x=>x.id==g("a"));i?i.q++:cart.push({id:+g("a"),q:1});save();$("#cart").classList.add("open")}
+else if(g("pl")){cart.find(x=>x.id==g("pl")).q++;save()}
+else if(g("m")){const i=cart.find(x=>x.id==g("m"));if(--i.q<1)cart=cart.filter(x=>x!==i);save()}
+else if(g("x")){cart=cart.filter(x=>x.id!=g("x"));save()}});
+$("#cartBtn").onclick=()=>$("#cart").classList.add("open");$("#close").onclick=()=>$("#cart").classList.remove("open");
+$("#order").onclick=()=>{if(!cart.length)return;const l=cart.map(i=>{const p=PRODUCTS.find(x=>x.id==i.id);return `• ${p.n} × ${i.q} = ${fmt(p.p*i.q)}`});
+open(`https://wa.me/${WA}?text=`+encodeURIComponent("طلب جديد من Future:\n"+l.join("\n")+"\n"+$("#total").textContent),"_blank")};
+draw();
+// واتساب، تواصل، للأعلى
+$("#wa").href=`https://wa.me/${WA}`;
+// تطبيق الإعدادات
+$("#adr").textContent="📍 "+ADDRESS;$("#ph").innerHTML=`📞 <a href="tel:${PHONE}" style="color:inherit">${PHONE}</a>`;$("#hrs").textContent="🕒 "+HOURS;
+$("#mqi").textContent="NVIDIA ✦ AMD ✦ INTEL ✦ ASUS ✦ MSI ✦ HP ✦ DELL ✦ LENOVO ✦ ".repeat(8);
+// توهج يتبع الماوس
+const gl=$("#glow");addEventListener("pointermove",e=>{gl.style.left=e.clientX+"px";gl.style.top=e.clientY+"px"});
+// عبارات متغيرة في الواجهة
+const TW=["بقوة المستقبل.","بأسعار خرافية.","بضمان حقيقي."];let ti=0;setInterval(()=>{ti=(ti+1)%TW.length;$("#tw").textContent=TW[ti]},2800);
+$("#cf").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);open(`https://wa.me/${WA}?text=`+encodeURIComponent(`الاسم: ${f.get("n")}\nالموبايل: ${f.get("p")}\n${f.get("m")}`),"_blank")};
+addEventListener("scroll",()=>$("#up").style.display=scrollY>500?"grid":"none");$("#up").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+// السلايدر
+let si=0;setInterval(()=>{si=(si+1)%3;$("#track").style.transform=`translateX(${si*100}%)`},4000);
+// عدادات الأرقام عند الظهور
+new IntersectionObserver((en,ob)=>en.forEach(x=>{if(!x.isIntersecting)return;ob.unobserve(x.target);const n=+x.target.dataset.n;let v=0;const s=setInterval(()=>{v=Math.min(n,v+Math.ceil(n/40));x.target.textContent=v.toLocaleString("en");v>=n&&clearInterval(s)},30)})).observe&&document.querySelectorAll(".num").forEach(el=>new IntersectionObserver((en,ob)=>en.forEach(x=>{if(!x.isIntersecting)return;ob.disconnect();const n=+el.dataset.n;let v=0;const s=setInterval(()=>{v=Math.min(n,v+Math.ceil(n/40));el.textContent=v.toLocaleString("en");v>=n&&clearInterval(s)},30)})).observe(el));
+// الوضع الليلي/النهاري
+const root=document.documentElement;try{const sv=localStorage.getItem("ftheme");if(sv)root.dataset.theme=sv;else if(matchMedia("(prefers-color-scheme: light)").matches)root.dataset.theme="light"}catch(e){}
+$("#theme").onclick=()=>{const n=root.dataset.theme=="dark"?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("ftheme",n)}catch(e){}};
+</script>
+</body>
+</html>
